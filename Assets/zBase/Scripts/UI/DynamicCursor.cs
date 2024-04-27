@@ -25,6 +25,8 @@ public class DynamicCursor : MonoBehaviour
     private void Awake()
     {
         _pointAndClickInteractor.OnStateChange.AddListener(OnStateChange);
+
+        OnStateChange(PointAndClickInteractionSystem.InteractorState.Idle);
     }
 
     private void Update()

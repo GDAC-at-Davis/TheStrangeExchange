@@ -583,15 +583,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6364975464097407963, guid: 03397318ad654db49a630387c5357098,
+    - target: {fileID: 5560361852357266060, guid: 03397318ad654db49a630387c5357098,
         type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 1.25
+      propertyPath: ShapeModule.radius.value
+      value: 0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 6364975464097407963, guid: 03397318ad654db49a630387c5357098,
+    - target: {fileID: 5560361852357266060, guid: 03397318ad654db49a630387c5357098,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560361852357266060, guid: 03397318ad654db49a630387c5357098,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 75
+      value: 85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
