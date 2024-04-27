@@ -45,10 +45,27 @@ public class ReadMeEditor : Editor
         rect.height = 10000;
         EditorGUI.DrawRect(rect, new Color(0.2f, 0.2f, 0.2f, 1));
 
+        // Image banner
+        var tex = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/zBase/Readme/Editor/fantasyshop.jpg");
+        if (tex != null)
+        {
+            // image rect
+            float aspect = (float)tex.width / tex.height;
+            float width = EditorGUIUtility.currentViewWidth;
+            float height = width / aspect;
+            GUILayout.Label(tex, GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true), GUILayout.Width(width),
+                GUILayout.Height(height));
+        }
+
+        if (GUILayout.Button("Image credits", EditorStyles.linkLabel))
+        {
+            Application.OpenURL("https://yangsh.artstation.com/projects/mq5GNd\n");
+        }
+
         // indent group
         EditorGUI.indentLevel++;
 
-        EditorGUILayout.LabelField("Thanks for participating in the GDACx3D Enthusiasts Collab", _headerStyle);
+        EditorGUILayout.LabelField("Thanks for participating in the GDACx3D Enthusiasts Collab :D", _headerStyle);
 
         EditorGUILayout.LabelField("How to do:", _subHeaderStyle);
 
@@ -69,7 +86,7 @@ public class ReadMeEditor : Editor
 
         EditorGUILayout.LabelField(
             "4. Do whatever you want with your model!!! Make it explode, move, talk, whatever. Be as fancy or as simple as you want" +
-            "Write your own scripts, or don't code at all - the BubblyMug example doesn't use any additional code. ",
+            ". Write your own scripts, or don't code at all - the BubblyMug example doesn't use any extra code! ",
             _bodyStyle);
 
         EditorGUILayout.LabelField("Remember, the theme is 'Shop of Curiosities', so make something funky!!",
