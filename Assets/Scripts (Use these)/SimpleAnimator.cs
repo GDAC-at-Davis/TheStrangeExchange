@@ -17,8 +17,6 @@ public class SimpleAnimator : MonoBehaviour, IAnimationClipSource
 
     private PlayableGraph playableGraph;
 
-    private bool graphCreated;
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -44,11 +42,7 @@ public class SimpleAnimator : MonoBehaviour, IAnimationClipSource
     public void Play()
     {
         // Lazy instatiation
-        if (!graphCreated)
-        {
-            graphCreated = true;
-            CreateGraph();
-        }
+        CreateGraph();
 
         if (playableGraph.IsValid())
         {

@@ -69,6 +69,12 @@ public class ReadMeEditor : Editor
                 "https://drive.google.com/drive/folders/1pK-dSc6XYJi2qSjk9pFBXI9pFRWad5Xg?usp=sharing\n");
         }
 
+        if (GUILayout.Button("Github repo", EditorStyles.linkLabel))
+        {
+            Application.OpenURL(
+                "https://github.com/GDAC-at-Davis/TheStrangeExchange\n");
+        }
+
         // indent group
         EditorGUI.indentLevel++;
 
