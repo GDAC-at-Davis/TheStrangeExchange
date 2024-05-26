@@ -46,7 +46,7 @@ public class ReadMeEditor : Editor
         EditorGUI.DrawRect(rect, new Color(0.2f, 0.2f, 0.2f, 1));
 
         // Image banner
-        var tex = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/zBase/Readme/Editor/fantasyshop.jpg");
+        var tex = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/zBase/Readme/Editor/Image.png");
         if (tex != null)
         {
             // image rect
@@ -57,9 +57,16 @@ public class ReadMeEditor : Editor
                 GUILayout.Height(height));
         }
 
-        if (GUILayout.Button("Image credits", EditorStyles.linkLabel))
+        if (GUILayout.Button("Model Collab Signup Sheet", EditorStyles.linkLabel))
         {
-            Application.OpenURL("https://yangsh.artstation.com/projects/mq5GNd\n");
+            Application.OpenURL(
+                "https://docs.google.com/spreadsheets/d/1XRCgHMzOjz4eI57EENlOpo0lZAOv4ucf_9PiyDIn_yA/edit#gid=0\n");
+        }
+
+        if (GUILayout.Button("3D Models Google Drive (.blend files included)", EditorStyles.linkLabel))
+        {
+            Application.OpenURL(
+                "https://drive.google.com/drive/folders/1pK-dSc6XYJi2qSjk9pFBXI9pFRWad5Xg?usp=sharing\n");
         }
 
         // indent group
@@ -70,7 +77,7 @@ public class ReadMeEditor : Editor
         EditorGUILayout.LabelField("How to do:", _subHeaderStyle);
 
         EditorGUILayout.LabelField(
-            "1. You should have chosen one of the models created by the 3D Enthusiasts club. " +
+            "1. Sign up for a 3D model on the linked signup spreadsheet " +
             "Make a new folder under 'Assets' named after whatever strange item you're bringing to life",
             _bodyStyle);
 
@@ -81,7 +88,7 @@ public class ReadMeEditor : Editor
 
         EditorGUILayout.LabelField(
             "3. Look in the 'Scripts: Use Me' folder for scripts that let the player interact with your object. " +
-            "You can use these scripts as a starting point for your own scripts. the zBase folder has the core gameplay stuff - don't worry about that unless really want to know",
+            "You can use these scripts as a starting point for your own scripts. Feel free to use the scenes in the 'Scenes' folder as a workspace",
             _bodyStyle);
 
         EditorGUILayout.LabelField(
@@ -89,12 +96,19 @@ public class ReadMeEditor : Editor
             ". Write your own scripts, or don't code at all - the BubblyMug example doesn't use any extra code! ",
             _bodyStyle);
 
-        EditorGUILayout.LabelField("Remember, the theme is 'Shop of Curiosities', so make something funky!!",
+        EditorGUILayout.LabelField("Remember, the theme is 'Shop of Curiosities', so make something strange...",
+            _subHeaderStyle);
+
+        EditorGUILayout.LabelField("",
             _subHeaderStyle);
 
         EditorGUILayout.LabelField(
             "5. Once you're done, try to turn the entire item into a single prefab with everything included. " +
             "Then, right click the folder you made in step 2. and select 'Export Package'. Make sure you only include your folder in the package, and post the package on the Discord server. ",
+            _bodyStyle);
+
+        EditorGUILayout.LabelField(
+            "6. Post the package on discord, and we'll everyone's items together into a small interactive shop!",
             _bodyStyle);
 
         EditorGUILayout.LabelField("Resources:", _subHeaderStyle);
